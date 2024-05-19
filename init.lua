@@ -250,6 +250,25 @@ require('lazy').setup {
         changedelete = { text = '~' },
       },
     },
+    {
+      'mg979/vim-visual-multi',
+      branch = 'master',
+      init = function()
+        vim.g.VM_maps = {
+          ['Find Under'] = '<C-d>',
+        }
+      end,
+    },
+    --  {
+    --    "zbirenbaum/copilot.lua",
+    --    cmd = "Copilot",
+    --    event = "InsertEnter",
+    --    config = function()
+    --      require("copilot").setup({})
+    --    end,
+    --  },
+    { 'lambdalisue/suda.vim' },
+    { 'tpope/vim-surround' },
   },
 
   -- NOTE: Plugins can also be configured to run lua code when they are loaded.
@@ -711,11 +730,25 @@ require('lazy').setup {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'supermaven' },
         },
       }
-    end,
+    end
+
   },
 
+    {
+      'supermaven-inc/supermaven-nvim',
+      config = function()
+        require('supermaven-nvim').setup {
+                  keymaps = {
+            accept_suggestion = '<Alt-\\>',
+            clear_suggestion = '<C-]>',
+            accept_word = '<C-j>',
+          },
+}
+      end,
+    },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is

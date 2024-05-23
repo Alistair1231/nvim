@@ -265,14 +265,14 @@ require('lazy').setup({
         }
       end,
     },
-    --  {
-    --    "zbirenbaum/copilot.lua",
-    --    cmd = "Copilot",
-    --    event = "InsertEnter",
-    --    config = function()
-    --      require("copilot").setup({})
-    --    end,
-    --  },
+    {
+      'zbirenbaum/copilot.lua',
+      cmd = 'Copilot',
+      event = 'InsertEnter',
+      config = function()
+        require('copilot').setup {}
+      end,
+    },
     { 'lambdalisue/suda.vim' },
     { 'tpope/vim-surround' },
   },
@@ -787,25 +787,23 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
-          { name = 'supermaven' },
         },
       }
-    end
-
+    end,
   },
 
-    {
-      'supermaven-inc/supermaven-nvim',
-      config = function()
-        require('supermaven-nvim').setup {
-                  keymaps = {
-            accept_suggestion = '<Alt-\\>',
-            clear_suggestion = '<C-]>',
-            accept_word = '<C-j>',
-          },
-}
-      end,
-    },
+  -- {
+  --   'supermaven-inc/supermaven-nvim',
+  --   config = function()
+  --     require('supermaven-nvim').setup {
+  --               keymaps = {
+  --         accept_suggestion = '<Alt-\\>',
+  --         clear_suggestion = '<C-]>',
+  --         accept_word = '<C-j>',
+  --       },
+  --}
+  --    end,
+  --  },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
